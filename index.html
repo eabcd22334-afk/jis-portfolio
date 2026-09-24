@@ -34,11 +34,8 @@ nav a:hover,nav a.active{color:var(--cream)}
 nav a.active{border-bottom:1px solid var(--cream);padding-bottom:5px}
 .theme{width:36px;height:36px;border:1px solid var(--line);background:rgba(218,241,222,.04);border-radius:50%;color:var(--cream);cursor:pointer}
 .menu{display:none;margin-left:auto;background:none;border:1px solid var(--line);border-radius:10px;color:var(--cream);padding:8px 11px}
-.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;position:relative;isolation:isolate;background:
- linear-gradient(90deg,rgba(3,24,25,.92),rgba(3,24,25,.45)),
- url("4af2b211-c3dd-43de-a755-dfad2739ab1e (1) (1).png") center/cover no-repeat}
-.hero:before{content:"";position:absolute;inset:0;z-index:-1;background:
- linear-gradient(180deg,rgba(3,24,25,.18),rgba(3,24,25,.78))}
+.hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 80px;position:relative}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.42;background:radial-gradient(ellipse at 60% 70%,rgba(35,83,71,.55),transparent 45%)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center}
 .kicker,.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);font-weight:600}
 .kicker{margin-bottom:18px}
@@ -58,12 +55,13 @@ h1 span{color:var(--sage)}
 .hero-side{position:absolute;right:2%;top:48%;display:grid;gap:13px;color:#718a7d;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
 .hero-side i{display:block;width:42px;height:1px;background:var(--sage);margin-top:5px}
 section{padding:74px 0}
-.section-card{border:1px solid var(--line);border-radius:24px;background:
- linear-gradient(135deg,rgba(5,31,32,.82),rgba(5,31,32,.58)),
- url("about-bg.jpg") center/cover no-repeat;
- backdrop-filter:blur(14px);box-shadow:0 25px 70px rgba(0,0,0,.14);overflow:hidden}
-.about{display:grid;grid-template-columns:1.05fr .95fr;min-height:300px}
+.section-card{border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,rgba(11,43,38,.66),rgba(5,31,32,.55));backdrop-filter:blur(14px);box-shadow:0 25px 70px rgba(0,0,0,.14);overflow:hidden}
+.about{display:grid;grid-template-columns:1fr .78fr .82fr;min-height:300px}
 .about-main{padding:38px}
+.about-photo{position:relative;border-left:1px solid var(--line);border-right:1px solid var(--line);min-height:260px;overflow:hidden}
+.about-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.about-photo .placeholder{height:100%;display:grid;place-items:center;text-align:center;color:var(--sage);font-size:12px;padding:0 16px}
+@media(max-width:850px){.about-photo{border-left:none;border-right:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);min-height:200px}}
 h2{font-family:"Space Grotesk";font-size:32px;line-height:1.05;letter-spacing:-.045em;margin:8px 0 15px}
 .about-main p{color:#a9bbb0;font-size:13px;max-width:600px}
 .info{display:grid;grid-template-columns:95px 1fr;gap:7px;margin-top:24px;font-size:12px}
@@ -72,9 +70,7 @@ h2{font-family:"Space Grotesk";font-size:32px;line-height:1.05;letter-spacing:-.
 .quote{margin:auto 35px;padding:27px;border:1px solid var(--line);border-radius:18px;background:rgba(22,56,50,.3);max-width:220px;font-family:"Space Grotesk";font-size:17px;color:var(--cream)}
 .quote small{display:block;margin-top:18px;color:var(--sage);font-family:Inter;font-size:10px;text-align:right}
 .columns{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.panel{padding:27px;border:1px solid var(--line);border-radius:22px;background:
- linear-gradient(145deg,rgba(11,43,38,.86),rgba(5,31,32,.72)),
- url("wave-bg.jpg") center/cover no-repeat}
+.panel{padding:27px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(11,43,38,.72),rgba(5,31,32,.6))}
 .panel h2{font-size:28px}
 .edu{display:grid;gap:10px;margin-top:18px}
 .edu-item{display:flex;gap:14px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:15px;background:rgba(22,56,50,.3)}
@@ -126,10 +122,10 @@ section{padding:45px 0}.section-card,.panel{border-radius:19px}.columns{gap:13px
 <h1>Johirul Islam<br><span>Sagor</span></h1>
 <div class="hero-sub">Student / AI Learning</div>
 <p class="hero-copy">I'm a passionate student, always eager to learn, explore new technologies and build something meaningful for the future.</p>
-<div class="buttons"><a class="btn primary" href="explore.html">Explore More <b>→</b></a><a class="btn" href="projects.html">Projects ↗</a></div>
+<div class="buttons"><a class="btn primary" href="#about">Explore More <b>→</b></a><a class="btn" href="#education">Projects ↗</a></div>
 </div>
 <div class="portrait-wrap reveal">
-<div class="portrait"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG3WZ1Wk-jA_vXGbogbmtW-qnjDZ5csJp1rA&s" alt="Johirul Islam Sagor" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder" style="display:none">Add your <b>Image.jpg</b> here</div></div>
+<div class="portrait"><img src="imaze.jpg" alt="Johirul Islam Sagor" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder" style="display:none">Add your <b>imaze.jpg</b> here</div></div>
 <div class="float-label">▣ &nbsp; Image.jpg</div>
 </div>
 </div>
@@ -141,6 +137,7 @@ section{padding:45px 0}.section-card,.panel{border-radius:19px}.columns{gap:13px
 <div class="about-main"><div class="eyebrow">About Me</div><h2>Who Am I <span style="color:var(--sage)">?</span></h2>
 <p>I'm a student of Dr Mahbubur Rahman Mollah College. I love learning new things, especially in AI, technology and web development. I'm always curious, motivated and focused on building a better version of myself.</p>
 <div class="info"><b>College</b><span>Dr Mahbubur Rahman Mollah College</span><b>Class</b><span>XII</span><b>Background</b><span>Science</span><b>Interests</b><span>AI, Technology, Web Development</span></div></div>
+<div class="about-photo"><img src="about.jpg" alt="About Johirul" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="placeholder" style="display:none">Add your <b>about.jpg</b> here</div></div>
 <div class="quote">“<br>The best way<br>to predict the future<br>is to create it.<small>— Sagor</small></div>
 </div></div></section>
 

@@ -22,7 +22,6 @@
  --cream:#daf1de;
  --white:#f1f6f0;
  --line:rgba(218,241,222,.14);
- --glass:rgba(11,43,38,.62);
  --max:1160px;
 }
 
@@ -33,17 +32,27 @@
 }
 
 html{
- scroll-behavior:smooth;
+ scroll-behavior:auto;
  scroll-padding-top:90px;
 }
 
 body{
+ margin:0;
  font-family:Inter,sans-serif;
  color:var(--white);
  background:var(--deep);
  line-height:1.6;
  overflow-x:hidden;
- scroll-behavior:smooth;
+}
+
+a{
+ color:inherit;
+ text-decoration:none;
+}
+
+button,
+input{
+ font-family:inherit;
 }
 
 body:before{
@@ -51,7 +60,6 @@ body:before{
  position:fixed;
  inset:0;
  z-index:-5;
-
  background:
  radial-gradient(
   circle at 8% 8%,
@@ -78,17 +86,7 @@ body:after{
  pointer-events:none;
  z-index:10;
  opacity:.025;
-
  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
-}
-
-a{
- color:inherit;
- text-decoration:none;
-}
-
-button{
- font-family:inherit;
 }
 
 .container{
@@ -104,22 +102,18 @@ button{
 header{
  position:fixed;
  z-index:100;
-
  top:12px;
  left:50%;
  transform:translateX(-50%);
-
  width:min(calc(100% - 40px),1080px);
-
  padding:12px 18px;
 
  background:rgba(3,24,25,.74);
-
  border:1px solid rgba(218,241,222,.08);
-
  border-radius:18px;
 
  backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
 
  box-shadow:0 15px 45px rgba(0,0,0,.22);
 }
@@ -137,7 +131,6 @@ header{
 
  font-family:"Space Grotesk";
  font-weight:600;
-
  white-space:nowrap;
 }
 
@@ -171,13 +164,10 @@ nav a:hover{
  height:36px;
 
  border:1px solid var(--line);
-
  background:rgba(218,241,222,.04);
-
  border-radius:50%;
 
  color:var(--cream);
-
  cursor:pointer;
 
  transition:.3s;
@@ -193,13 +183,10 @@ nav a:hover{
  margin-left:auto;
 
  background:none;
-
  border:1px solid var(--line);
-
  border-radius:10px;
 
  color:var(--cream);
-
  padding:8px 11px;
 }
 
@@ -232,10 +219,8 @@ nav a:hover{
 
 .hero:before{
  content:"";
-
  position:absolute;
  inset:0;
-
  z-index:-1;
 
  background:
@@ -254,23 +239,16 @@ nav a:hover{
  font-size:10px;
  letter-spacing:.24em;
  text-transform:uppercase;
-
  color:var(--sage);
-
  font-weight:600;
-
  margin-bottom:18px;
 }
 
 .hero h1{
  font-family:"Space Grotesk";
-
  font-size:clamp(70px,12vw,145px);
-
  line-height:.86;
-
  letter-spacing:-.075em;
-
  margin-bottom:25px;
 }
 
@@ -280,28 +258,22 @@ nav a:hover{
 
 .hero-description{
  max-width:620px;
-
  color:#b2c2b8;
-
  font-size:15px;
-
  margin-bottom:28px;
 }
 
 .back-btn{
  display:inline-flex;
-
  align-items:center;
  gap:10px;
 
  padding:11px 18px;
 
  border:1px solid rgba(218,241,222,.35);
-
  border-radius:999px;
 
  color:var(--cream);
-
  font-size:12px;
 
  transition:.3s;
@@ -309,18 +281,16 @@ nav a:hover{
 
 .back-btn:hover{
  transform:translateY(-3px);
-
  background:rgba(218,241,222,.08);
 }
 
 
 /* =========================
-   PROJECT AREA
+   PROJECT SECTION
 ========================= */
 
 .projects-section{
  position:relative;
-
  padding:90px 0 100px;
 
  background:
@@ -334,29 +304,21 @@ nav a:hover{
 
 .section-head{
  display:flex;
-
  align-items:flex-end;
-
  justify-content:space-between;
-
  gap:20px;
-
  margin-bottom:30px;
 }
 
 .section-head h2{
  font-family:"Space Grotesk";
-
  font-size:42px;
-
  letter-spacing:-.05em;
 }
 
 .section-head p{
  max-width:430px;
-
  color:#829a8f;
-
  font-size:12px;
 }
 
@@ -367,10 +329,7 @@ nav a:hover{
 
 .projects-grid{
  display:grid;
-
- grid-template-columns:
- repeat(3,minmax(0,1fr));
-
+ grid-template-columns:repeat(3,minmax(0,1fr));
  gap:18px;
 }
 
@@ -382,13 +341,10 @@ nav a:hover{
  padding:26px;
 
  display:flex;
-
  flex-direction:column;
-
  justify-content:space-between;
 
  border:1px solid var(--line);
-
  border-radius:23px;
 
  background:
@@ -399,6 +355,7 @@ nav a:hover{
  );
 
  backdrop-filter:blur(15px);
+ -webkit-backdrop-filter:blur(15px);
 
  overflow:hidden;
 
@@ -410,7 +367,6 @@ nav a:hover{
 
 .project-card:before{
  content:"";
-
  position:absolute;
 
  width:170px;
@@ -433,19 +389,14 @@ nav a:hover{
 
 .project-card:hover{
  transform:translateY(-8px);
-
  border-color:rgba(218,241,222,.32);
-
  box-shadow:0 25px 60px rgba(0,0,0,.3);
 }
 
 .project-number{
  font-family:"Space Grotesk";
-
  color:#617c70;
-
  font-size:11px;
-
  letter-spacing:.16em;
 }
 
@@ -453,9 +404,7 @@ nav a:hover{
  margin-top:35px;
 
  font-family:"Space Grotesk";
-
  font-size:23px;
-
  line-height:1.15;
 
  color:var(--cream);
@@ -465,33 +414,24 @@ nav a:hover{
 
 .project-footer{
  display:flex;
-
  justify-content:space-between;
-
  align-items:center;
-
  gap:10px;
-
  margin-top:30px;
 }
 
 .project-link{
  display:inline-flex;
-
  align-items:center;
-
  gap:8px;
 
  color:var(--sage);
-
  font-size:11px;
-
  font-weight:600;
 
  padding:9px 13px;
 
  border:1px solid rgba(142,182,155,.24);
-
  border-radius:999px;
 
  transition:.25s;
@@ -499,58 +439,25 @@ nav a:hover{
 
 .project-link:hover{
  color:var(--cream);
-
  background:rgba(142,182,155,.08);
-
  transform:translateX(3px);
 }
 
 
 /* =========================
-   EMPTY / LOADING
+   LOADING
 ========================= */
-
-.empty-state{
- grid-column:1/-1;
-
- padding:70px 25px;
-
- text-align:center;
-
- border:1px dashed rgba(218,241,222,.15);
-
- border-radius:24px;
-
- background:rgba(5,31,32,.45);
-}
-
-.empty-state h3{
- font-family:"Space Grotesk";
-
- font-size:24px;
-
- margin-bottom:8px;
-}
-
-.empty-state p{
- color:#81988e;
-
- font-size:12px;
-}
 
 .loading{
  grid-column:1/-1;
 
  display:flex;
-
  align-items:center;
-
  justify-content:center;
 
  min-height:250px;
 
  color:#8fa99c;
-
  font-size:12px;
 }
 
@@ -559,7 +466,6 @@ nav a:hover{
  height:22px;
 
  border:2px solid rgba(218,241,222,.15);
-
  border-top-color:var(--sage);
 
  border-radius:50%;
@@ -575,22 +481,42 @@ nav a:hover{
  }
 }
 
+.empty-state{
+ grid-column:1/-1;
+
+ padding:70px 25px;
+
+ text-align:center;
+
+ border:1px dashed rgba(218,241,222,.15);
+ border-radius:24px;
+
+ background:rgba(5,31,32,.45);
+}
+
+.empty-state h3{
+ font-family:"Space Grotesk";
+ font-size:24px;
+ margin-bottom:8px;
+}
+
+.empty-state p{
+ color:#81988e;
+ font-size:12px;
+}
+
 
 /* =========================
-   LOGIN MODAL
+   MODAL
 ========================= */
 
 .modal{
  position:fixed;
-
  inset:0;
-
  z-index:500;
 
  display:none;
-
  align-items:center;
-
  justify-content:center;
 
  padding:20px;
@@ -598,6 +524,7 @@ nav a:hover{
  background:rgba(0,0,0,.72);
 
  backdrop-filter:blur(12px);
+ -webkit-backdrop-filter:blur(12px);
 }
 
 .modal.show{
@@ -610,7 +537,6 @@ nav a:hover{
  padding:30px;
 
  border:1px solid var(--line);
-
  border-radius:25px;
 
  background:
@@ -625,22 +551,16 @@ nav a:hover{
 
 .modal-top{
  display:flex;
-
  align-items:center;
-
  justify-content:space-between;
 
  gap:20px;
-
  margin-bottom:25px;
 }
 
 .modal-top h2{
  font-family:"Space Grotesk";
-
  font-size:27px;
-
- margin:0;
 }
 
 .close{
@@ -654,7 +574,6 @@ nav a:hover{
  background:rgba(218,241,222,.04);
 
  color:var(--cream);
-
  cursor:pointer;
 }
 
@@ -666,11 +585,8 @@ nav a:hover{
  display:block;
 
  color:#8fa79b;
-
  font-size:10px;
-
  letter-spacing:.12em;
-
  text-transform:uppercase;
 
  margin-bottom:7px;
@@ -688,7 +604,6 @@ nav a:hover{
  outline:none;
 
  color:var(--cream);
-
  background:rgba(3,24,25,.75);
 
  font-size:13px;
@@ -704,17 +619,14 @@ nav a:hover{
  padding:13px;
 
  border:none;
-
  border-radius:13px;
 
  background:var(--cream);
-
  color:var(--dark);
 
  font-weight:700;
 
  cursor:pointer;
-
  margin-top:5px;
 }
 
@@ -722,7 +634,6 @@ nav a:hover{
  display:none;
 
  margin-top:12px;
-
  padding:10px 12px;
 
  border-radius:10px;
@@ -732,20 +643,17 @@ nav a:hover{
  border:1px solid rgba(220,100,100,.2);
 
  color:#efaaaa;
-
  font-size:11px;
 }
 
 
 /* =========================
-   ADMIN PANEL
+   ADMIN
 ========================= */
 
 .admin-panel{
  position:fixed;
-
  inset:0;
-
  z-index:400;
 
  display:none;
@@ -767,9 +675,7 @@ nav a:hover{
 
 .admin-header{
  position:sticky;
-
  top:0;
-
  z-index:20;
 
  padding:18px 25px;
@@ -779,25 +685,21 @@ nav a:hover{
  background:rgba(3,24,25,.88);
 
  backdrop-filter:blur(18px);
+ -webkit-backdrop-filter:blur(18px);
 }
 
 .admin-header-inner{
  max-width:1100px;
-
  margin:auto;
 
  display:flex;
-
  justify-content:space-between;
-
  align-items:center;
-
  gap:20px;
 }
 
 .admin-title{
  font-family:"Space Grotesk";
-
  font-size:21px;
 }
 
@@ -807,9 +709,7 @@ nav a:hover{
 
 .admin-actions{
  display:flex;
-
  gap:10px;
-
  flex-wrap:wrap;
 }
 
@@ -817,7 +717,6 @@ nav a:hover{
  padding:9px 14px;
 
  border:1px solid var(--line);
-
  border-radius:999px;
 
  background:rgba(218,241,222,.04);
@@ -829,19 +728,8 @@ nav a:hover{
  cursor:pointer;
 }
 
-.small-btn.primary{
- background:var(--cream);
-
- color:var(--dark);
-
- border-color:var(--cream);
-
- font-weight:700;
-}
-
 .admin-content{
  max-width:1100px;
-
  margin:auto;
 
  padding:55px 20px 100px;
@@ -849,10 +737,7 @@ nav a:hover{
 
 .admin-menu{
  display:grid;
-
- grid-template-columns:
- repeat(2,minmax(0,1fr));
-
+ grid-template-columns:repeat(2,minmax(0,1fr));
  gap:18px;
 
  margin-bottom:35px;
@@ -862,7 +747,6 @@ nav a:hover{
  padding:24px;
 
  border:1px solid var(--line);
-
  border-radius:20px;
 
  background:rgba(11,43,38,.65);
@@ -874,7 +758,6 @@ nav a:hover{
 
 .admin-menu-card:hover{
  transform:translateY(-4px);
-
  border-color:rgba(218,241,222,.28);
 }
 
@@ -882,7 +765,6 @@ nav a:hover{
  display:block;
 
  font-family:"Space Grotesk";
-
  font-size:18px;
 
  margin-bottom:5px;
@@ -890,17 +772,16 @@ nav a:hover{
 
 .admin-menu-card span{
  color:#81998e;
-
  font-size:11px;
 }
 
-.admin-form{
+.admin-form,
+.delete-section{
  display:none;
 
  padding:25px;
 
  border:1px solid var(--line);
-
  border-radius:22px;
 
  background:rgba(11,43,38,.55);
@@ -908,26 +789,22 @@ nav a:hover{
  margin-bottom:25px;
 }
 
-.admin-form.show{
+.admin-form.show,
+.delete-section.show{
  display:block;
 }
 
-.admin-form h3{
+.admin-form h3,
+.delete-section h3{
  font-family:"Space Grotesk";
-
  font-size:22px;
-
  margin-bottom:20px;
 }
 
 .form-grid{
  display:grid;
-
- grid-template-columns:
- 1fr 1fr auto;
-
+ grid-template-columns:1fr 1fr auto;
  gap:12px;
-
  align-items:end;
 }
 
@@ -935,7 +812,6 @@ nav a:hover{
  display:block;
 
  color:#839b90;
-
  font-size:10px;
 
  margin-bottom:6px;
@@ -961,11 +837,9 @@ nav a:hover{
  padding:12px 18px;
 
  border:0;
-
  border-radius:11px;
 
  background:var(--cream);
-
  color:var(--dark);
 
  font-weight:700;
@@ -973,33 +847,14 @@ nav a:hover{
  cursor:pointer;
 }
 
-.delete-section{
- display:none;
-
- padding:25px;
-
- border:1px solid var(--line);
-
- border-radius:22px;
-
- background:rgba(11,43,38,.55);
-}
-
-.delete-section.show{
- display:block;
-}
-
-.delete-section h3{
- font-family:"Space Grotesk";
-
- font-size:22px;
-
- margin-bottom:20px;
+.admin-message{
+ margin-top:12px;
+ font-size:11px;
+ color:var(--sage);
 }
 
 .delete-list{
  display:grid;
-
  gap:10px;
 }
 
@@ -1007,7 +862,6 @@ nav a:hover{
  display:flex;
 
  align-items:center;
-
  justify-content:space-between;
 
  gap:15px;
@@ -1015,7 +869,6 @@ nav a:hover{
  padding:13px 15px;
 
  border:1px solid var(--line);
-
  border-radius:13px;
 
  background:rgba(5,31,32,.55);
@@ -1023,7 +876,6 @@ nav a:hover{
 
 .delete-item-name{
  font-size:12px;
-
  color:var(--cream);
 
  word-break:break-word;
@@ -1045,14 +897,6 @@ nav a:hover{
  font-size:10px;
 
  cursor:pointer;
-}
-
-.admin-message{
- margin-top:12px;
-
- font-size:11px;
-
- color:var(--sage);
 }
 
 
@@ -1082,7 +926,6 @@ footer{
 
 .footer-flex strong{
  color:var(--cream);
-
  font-weight:500;
 }
 
@@ -1111,11 +954,9 @@ footer{
   background:#0b2b26;
 
   border:1px solid var(--line);
-
   border-radius:15px;
 
   flex-direction:column;
-
   align-items:stretch;
  }
 
@@ -1169,7 +1010,6 @@ footer{
 
  .hero{
   min-height:75vh;
-
   padding:130px 0 80px;
  }
 
@@ -1183,13 +1023,11 @@ footer{
 
  .projects-section{
   padding:60px 0 75px;
-
   background-attachment:scroll;
  }
 
  .section-head{
   align-items:flex-start;
-
   flex-direction:column;
  }
 
@@ -1211,7 +1049,6 @@ footer{
 
  .admin-header-inner{
   align-items:flex-start;
-
   flex-direction:column;
  }
 
@@ -1225,7 +1062,6 @@ footer{
 
  .delete-item{
   align-items:flex-start;
-
   flex-direction:column;
  }
 
@@ -1236,6 +1072,7 @@ footer{
 
 </style>
 </head>
+
 
 <body>
 
@@ -1256,12 +1093,16 @@ footer{
 
 </a>
 
+
 <nav>
 
 <a href="index.html">
 Home
 </a>
 
+<a href="#projects">
+Projects
+</a>
 
 </nav>
 
@@ -1271,14 +1112,18 @@ class="admin-setting"
 id="adminSetting"
 aria-label="Admin Settings"
 title="Admin Settings">
+
 ⚙
+
 </button>
 
 
 <button
 class="menu"
 id="menuBtn">
+
 ☰
+
 </button>
 
 </div>
@@ -1286,8 +1131,9 @@ id="menuBtn">
 </header>
 
 
+
 <!-- =========================
-     MAIN PAGE
+     MAIN
 ========================= -->
 
 <main id="mainPage">
@@ -1308,13 +1154,17 @@ Johirul Islam Sagor
 </h1>
 
 <p class="hero-description">
+
 A collection of projects, experiments and digital creations built while learning technology, web development and AI.
+
 </p>
 
 <a
 href="index.html"
 class="back-btn">
+
 ← Back to Portfolio
+
 </a>
 
 </div>
@@ -1322,6 +1172,7 @@ class="back-btn">
 </div>
 
 </section>
+
 
 
 <section
@@ -1344,8 +1195,11 @@ My Projects
 
 </div>
 
+
 <p>
+
 Explore my latest projects and experiments. New projects can be added dynamically through the admin panel.
+
 </p>
 
 </div>
@@ -1372,6 +1226,7 @@ Loading projects...
 </main>
 
 
+
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1391,6 +1246,7 @@ Loading projects...
 </div>
 
 </footer>
+
 
 
 <!-- =========================
@@ -1451,7 +1307,9 @@ autocomplete="current-password">
 <button
 class="modal-btn"
 id="loginBtn">
+
 Continue to Admin
+
 </button>
 
 
@@ -1463,6 +1321,7 @@ id="loginError">
 </div>
 
 </div>
+
 
 
 <!-- =========================
@@ -1481,9 +1340,7 @@ id="adminPanel">
 <div class="admin-title">
 
 Project
-<span>
-Admin
-</span>
+<span>Admin</span>
 
 </div>
 
@@ -1493,13 +1350,17 @@ Admin
 <button
 class="small-btn"
 id="backToSite">
+
 ← Website
+
 </button>
 
 <button
 class="small-btn"
 id="logoutBtn">
+
 Logout
+
 </button>
 
 </div>
@@ -1507,6 +1368,7 @@ Logout
 </div>
 
 </div>
+
 
 
 <div class="admin-content">
@@ -1521,7 +1383,9 @@ font-family:'Space Grotesk';
 font-size:40px;
 margin-bottom:30px;
 ">
+
 Manage Projects
+
 </h2>
 
 
@@ -1558,6 +1422,7 @@ Remove an existing project
 </div>
 
 </div>
+
 
 
 <div
@@ -1601,7 +1466,9 @@ placeholder="https://example.com">
 <button
 class="add-project-btn"
 id="addProjectBtn">
+
 Add Project
+
 </button>
 
 </div>
@@ -1613,6 +1480,7 @@ id="addMessage">
 </div>
 
 </div>
+
 
 
 <div
@@ -1630,10 +1498,106 @@ id="deleteList">
 
 </div>
 
-
 </div>
 
 </div>
+
+
+
+<!-- =========================
+     LENIS SMOOTH SCROLL
+========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+
+
+<script>
+
+const lenis = new Lenis({
+
+ duration: 1.2,
+
+ smoothWheel: true,
+
+ wheelMultiplier: 0.9,
+
+ touchMultiplier: 1,
+
+ infinite: false,
+
+ gestureOrientation: "vertical",
+
+ autoRaf: true
+
+});
+
+
+/*
+   Anchor smooth scrolling
+*/
+
+document
+.querySelectorAll('a[href^="#"]')
+.forEach(link=>{
+
+ link.addEventListener(
+  "click",
+  function(e){
+
+   const targetId =
+   this.getAttribute("href");
+
+   if(
+    !targetId ||
+    targetId === "#"
+   ){
+    return;
+   }
+
+   const target =
+   document.querySelector(targetId);
+
+   if(!target){
+    return;
+   }
+
+   e.preventDefault();
+
+   lenis.scrollTo(
+    target,
+    {
+     offset:-90,
+     duration:1.3
+    }
+   );
+
+   document
+   .querySelector("nav")
+   ?.classList.remove("open");
+
+  }
+ );
+
+});
+
+
+/*
+   Keep animation frame
+   for maximum compatibility
+*/
+
+function raf(time){
+
+ lenis.raf(time);
+
+ requestAnimationFrame(raf);
+
+}
+
+requestAnimationFrame(raf);
+
+</script>
+
 
 
 <!-- =========================
@@ -1648,6 +1612,7 @@ import {
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
+
 import {
  getAuth,
  signInWithEmailAndPassword,
@@ -1656,6 +1621,7 @@ import {
 }
 from
 "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
 
 import {
  getFirestore,
@@ -1710,6 +1676,7 @@ getAuth(app);
 
 const db =
 getFirestore(app);
+
 
 
 /* =========================
@@ -1777,8 +1744,9 @@ const deleteList =
 document.getElementById("deleteList");
 
 
+
 /* =========================
-   ADMIN URL CHECK
+   ADMIN URL
 ========================= */
 
 const params =
@@ -1798,6 +1766,7 @@ if(adminMode){
 }
 
 
+
 /* =========================
    LOGIN
 ========================= */
@@ -1806,10 +1775,11 @@ adminSetting.addEventListener(
  "click",
  ()=>{
 
-  loginError.style.display="none";
+  loginError.style.display =
+  "none";
 
-  emailInput.value="";
-  passwordInput.value="";
+  emailInput.value = "";
+  passwordInput.value = "";
 
   loginModal.classList.add("show");
 
@@ -1838,7 +1808,9 @@ loginModal.addEventListener(
 
   if(e.target === loginModal){
 
-   loginModal.classList.remove("show");
+   loginModal.classList.remove(
+    "show"
+   );
 
   }
 
@@ -1856,6 +1828,7 @@ loginBtn.addEventListener(
   const password =
   passwordInput.value;
 
+
   if(!email || !password){
 
    showLoginError(
@@ -1866,9 +1839,10 @@ loginBtn.addEventListener(
 
   }
 
-  loginBtn.disabled=true;
 
-  loginBtn.textContent=
+  loginBtn.disabled = true;
+
+  loginBtn.textContent =
   "Verifying...";
 
 
@@ -1880,9 +1854,13 @@ loginBtn.addEventListener(
     password
    );
 
-   loginModal.classList.remove("show");
+   loginModal.classList.remove(
+    "show"
+   );
 
-  }catch(error){
+  }
+
+  catch(error){
 
    console.error(error);
 
@@ -1890,11 +1868,13 @@ loginBtn.addEventListener(
     "Login failed. Check your Firebase email and password."
    );
 
-  }finally{
+  }
 
-   loginBtn.disabled=false;
+  finally{
 
-   loginBtn.textContent=
+   loginBtn.disabled = false;
+
+   loginBtn.textContent =
    "Continue to Admin";
 
   }
@@ -1905,13 +1885,14 @@ loginBtn.addEventListener(
 
 function showLoginError(message){
 
- loginError.textContent=
+ loginError.textContent =
  message;
 
- loginError.style.display=
+ loginError.style.display =
  "block";
 
 }
+
 
 
 /* =========================
@@ -1926,7 +1907,9 @@ onAuthStateChanged(
 
    showAdminPanel();
 
-  }else{
+  }
+
+  else{
 
    hideAdminPanel();
 
@@ -1940,8 +1923,10 @@ function showAdminPanel(){
 
  adminPanel.classList.add("show");
 
- document.body.style.overflow=
+ document.body.style.overflow =
  "hidden";
+
+ lenis.stop();
 
 }
 
@@ -1950,14 +1935,17 @@ function hideAdminPanel(){
 
  adminPanel.classList.remove("show");
 
- document.body.style.overflow=
+ document.body.style.overflow =
  "";
+
+ lenis.start();
 
 }
 
 
+
 /* =========================
-   BACK TO WEBSITE
+   BACK
 ========================= */
 
 backToSite.addEventListener(
@@ -1968,6 +1956,7 @@ backToSite.addEventListener(
 
  }
 );
+
 
 
 /* =========================
@@ -1984,6 +1973,7 @@ logoutBtn.addEventListener(
 
  }
 );
+
 
 
 /* =========================
@@ -2020,6 +2010,7 @@ openDelete.addEventListener(
 
  }
 );
+
 
 
 /* =========================
@@ -2062,10 +2053,10 @@ addProjectBtn.addEventListener(
   }
 
 
-  addProjectBtn.disabled=
+  addProjectBtn.disabled =
   true;
 
-  addProjectBtn.textContent=
+  addProjectBtn.textContent =
   "Adding...";
 
 
@@ -2077,25 +2068,29 @@ addProjectBtn.addEventListener(
      "projects"
     ),
     {
+
      name:name,
+
      link:link,
+
      createdAt:
-      serverTimestamp()
+     serverTimestamp()
+
     }
    );
 
 
-   projectName.value="";
+   projectName.value = "";
 
-   projectLink.value="";
-
+   projectLink.value = "";
 
    showAddMessage(
     "Project added successfully."
    );
 
+  }
 
-  }catch(error){
+  catch(error){
 
    console.error(error);
 
@@ -2103,12 +2098,14 @@ addProjectBtn.addEventListener(
     "Could not add project. Check Firestore rules."
    );
 
-  }finally{
+  }
 
-   addProjectBtn.disabled=
+  finally{
+
+   addProjectBtn.disabled =
    false;
 
-   addProjectBtn.textContent=
+   addProjectBtn.textContent =
    "Add Project";
 
   }
@@ -2119,12 +2116,12 @@ addProjectBtn.addEventListener(
 
 function showAddMessage(message){
 
- addMessage.textContent=
+ addMessage.textContent =
  message;
 
  setTimeout(
   ()=>{
-   addMessage.textContent="";
+   addMessage.textContent = "";
   },
   4000
  );
@@ -2132,8 +2129,9 @@ function showAddMessage(message){
 }
 
 
+
 /* =========================
-   REALTIME PROJECTS
+   FIRESTORE REALTIME
 ========================= */
 
 const projectsQuery =
@@ -2181,7 +2179,7 @@ onSnapshot(
 
   console.error(error);
 
-  projectsGrid.innerHTML=`
+  projectsGrid.innerHTML = `
 
    <div class="empty-state">
 
@@ -2201,6 +2199,7 @@ onSnapshot(
 );
 
 
+
 /* =========================
    RENDER PROJECTS
 ========================= */
@@ -2209,9 +2208,9 @@ function renderProjects(
  projects
 ){
 
- if(projects.length===0){
+ if(projects.length === 0){
 
-  projectsGrid.innerHTML=`
+  projectsGrid.innerHTML = `
 
    <div class="empty-state">
 
@@ -2236,13 +2235,11 @@ function renderProjects(
  projects.map(
   (project,index)=>`
 
-   <article
-    class="project-card">
+   <article class="project-card">
 
     <div>
 
-     <div
-      class="project-number">
+     <div class="project-number">
 
       PROJECT
       ${String(index+1).padStart(2,"0")}
@@ -2250,8 +2247,7 @@ function renderProjects(
      </div>
 
 
-     <h3
-      class="project-name">
+     <h3 class="project-name">
 
       ${escapeHTML(
        project.name ||
@@ -2263,8 +2259,7 @@ function renderProjects(
     </div>
 
 
-    <div
-     class="project-footer">
+    <div class="project-footer">
 
      <span
       style="
@@ -2297,6 +2292,7 @@ function renderProjects(
 }
 
 
+
 /* =========================
    DELETE LIST
 ========================= */
@@ -2305,9 +2301,9 @@ function renderDeleteList(
  projects
 ){
 
- if(projects.length===0){
+ if(projects.length === 0){
 
-  deleteList.innerHTML=`
+  deleteList.innerHTML = `
 
    <div
     style="
@@ -2330,11 +2326,9 @@ function renderDeleteList(
  projects.map(
   project=>`
 
-   <div
-    class="delete-item">
+   <div class="delete-item">
 
-    <div
-     class="delete-item-name">
+    <div class="delete-item-name">
 
      ${escapeHTML(
       project.name ||
@@ -2359,9 +2353,7 @@ function renderDeleteList(
 
 
  document
- .querySelectorAll(
-  ".delete-btn"
- )
+ .querySelectorAll(".delete-btn")
  .forEach(button=>{
 
   button.addEventListener(
@@ -2382,10 +2374,10 @@ function renderDeleteList(
      return;
 
 
-    button.disabled=
+    button.disabled =
     true;
 
-    button.textContent=
+    button.textContent =
     "Deleting...";
 
 
@@ -2399,7 +2391,9 @@ function renderDeleteList(
       )
      );
 
-    }catch(error){
+    }
+
+    catch(error){
 
      console.error(error);
 
@@ -2407,10 +2401,10 @@ function renderDeleteList(
       "Could not delete project. Check Firestore rules."
      );
 
-     button.disabled=
+     button.disabled =
      false;
 
-     button.textContent=
+     button.textContent =
      "Delete";
 
     }
@@ -2423,6 +2417,7 @@ function renderDeleteList(
 }
 
 
+
 /* =========================
    SECURITY HELPERS
 ========================= */
@@ -2431,30 +2426,11 @@ function escapeHTML(value){
 
  return String(value)
 
- .replaceAll(
-  "&",
-  "&amp;"
- )
-
- .replaceAll(
-  "<",
-  "&lt;"
- )
-
- .replaceAll(
-  ">",
-  "&gt;"
- )
-
- .replaceAll(
-  '"',
-  "&quot;"
- )
-
- .replaceAll(
-  "'",
-  "&#039;"
- );
+ .replaceAll("&","&amp;")
+ .replaceAll("<","&lt;")
+ .replaceAll(">","&gt;")
+ .replaceAll('"',"&quot;")
+ .replaceAll("'","&#039;");
 
 }
 
@@ -2466,7 +2442,6 @@ function safeURL(value){
   const url =
   new URL(value);
 
-
   if(
    url.protocol === "http:" ||
    url.protocol === "https:"
@@ -2476,12 +2451,14 @@ function safeURL(value){
 
   }
 
- }catch(e){}
+ }
 
+ catch(e){}
 
  return "#";
 
 }
+
 
 
 /* =========================
@@ -2494,9 +2471,7 @@ document.getElementById(
 );
 
 const nav =
-document.querySelector(
- "nav"
-);
+document.querySelector("nav");
 
 
 menuBtn.addEventListener(
@@ -2511,15 +2486,13 @@ menuBtn.addEventListener(
 );
 
 
-document
-.querySelectorAll(
- "nav a"
-)
+nav
+.querySelectorAll("a")
 .forEach(link=>{
 
  link.addEventListener(
   "click",
- ()=>{
+  ()=>{
 
    nav.classList.remove(
     "open"
@@ -2531,65 +2504,9 @@ document
 });
 
 
-/* =========================
-   SMOOTH ANCHOR SCROLL
-========================= */
-
-document
-.querySelectorAll(
- 'a[href^="#"]'
-)
-.forEach(link=>{
-
- link.addEventListener(
-  "click",
- function(e){
-
-   const targetId =
-   this.getAttribute(
-    "href"
-   );
-
-
-   if(
-    !targetId ||
-    targetId === "#"
-   ){
-
-    return;
-
-   }
-
-
-   const target =
-   document.querySelector(
-    targetId
-   );
-
-
-   if(!target)
-    return;
-
-
-   e.preventDefault();
-
-
-   target.scrollIntoView({
-
-    behavior:"smooth",
-
-    block:"start"
-
-   });
-
-  }
- );
-
-});
-
 
 /* =========================
-   KEYBOARD LOGIN
+   ENTER TO LOGIN
 ========================= */
 
 passwordInput.addEventListener(
@@ -2602,8 +2519,7 @@ passwordInput.addEventListener(
 
   }
 
-});
-
+ });
 
 </script>
 
